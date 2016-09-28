@@ -24,3 +24,28 @@ code {
 pre {
 	padding: 1em;
 }
+
+input:focus{
+	border: none;
+}
+
+.prompt {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 100vw;
+	background: #1E1E23;
+	padding: 1em 3em;
+}
+
+.input-prompt{
+	padding: 0 .5em;
+	border: none;
+	outline: none;
+	font-size: 2em;
+	color: white;
+	height: 2em;
+	width: calc(100vw - 3em);
+	background: #2D2D32;
+}
