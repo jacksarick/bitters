@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>New Server</title>
+		<link rel="stylesheet" type="text/css" href="./resources/style.css">
+		<script>
+			var app = require('./app.js');
+
+			server = $("#server").value();
+			port = $("#port").value();
+		</script>
+	</head>
+	<body>
+		<h1>Connect to Server</h1>
+		<div id="main-form">
+			<label>Nickname: </label><input type="input" name="nickname" id="nickname"><br>
+			<label>Username: </label><input type="input" name="username" id="username"><br>
+			<label>Real name: </label><input type="input" name="realname" id="realname"><br>
+			<br>
+			<label>Server: </label><input type="input" name="server" id="server" placeholder="chat.freenode.net"><br>
+			<label>Port: </label><input type="number" name="port" id="port" placeholder="6667"><br>
+			<button onclick="app.userData('#main-form'); app.connect(">Connect</button>
+		</div>
+	</body>
+</html>
