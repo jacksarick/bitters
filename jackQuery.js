@@ -3,7 +3,7 @@ function Tag(x) {
 		this.main = document.getElementById(x.slice(1));
 	}
 	if (x[0] == ".") {
-		this.main = document.getElementsByClassName(x.slice(1));
+		this.main = document.getElementsByClassName(x.slice(1))[0];
 	}
 
 	this.set = function(c) { this.main.innerHTML = c; }
