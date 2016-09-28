@@ -46,7 +46,7 @@ var app = {
 
 // Minor change, to terminate lines with \r\n
 app.client.send = function(data) {
-	client.write(data + "\r\n");
+	app.client.write(data + "\r\n");
 }
 
 // client.on('data', function(data) {

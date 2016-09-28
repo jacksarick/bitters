@@ -6,21 +6,35 @@
 		<link rel="stylesheet" type="text/css" href="./resources/style.css">
 		<script>
 			var app = require('./app.js');
+			const $ = require("./jackQuery.js"); 
 
-			server = $("#server").value();
-			port = $("#port").value();
+			// Function to trigger on submit
+			function submit() {
+				// Add data to app
+				app.userData('#main-form');
+
+				// Get data
+				const server = $("#server").value();
+				const port = $("#port").value();
+				
+				// Open connection
+				app.connect(server, port);
+
+				// This line is to trigger the href
+				return true;
+			}
 		</script>
 	</head>
 	<body>
 		<h1>Connect to Server</h1>
 		<div id="main-form">
-			<label>Nickname: </label><input type="input" name="nickname" id="nickname"><br>
-			<label>Username: </label><input type="input" name="username" id="username"><br>
-			<label>Real name: </label><input type="input" name="realname" id="realname"><br>
+			<label>Nickname: </label><input type="input" name="nickname" id="nickname" value="nickname"><br>
+			<label>Username: </label><input type="input" name="username" id="username" value="username"><br>
+			<label>Real name: </label><input type="input" name="realname" id="realname" value="realname"><br>
 			<br>
-			<label>Server: </label><input type="input" name="server" id="server" placeholder="chat.freenode.net"><br>
-			<label>Port: </label><input type="number" name="port" id="port" placeholder="6667"><br>
-			<button onclick="app.userData('#main-form'); app.connect(">Connect</button>
+			<label>Server: </label><input type="input" name="server" id="server" value="localhost"><br>
+			<label>Port: </label><input type="number" name="port" id="port" value="6667"><br>
+			<button onclick="return submit();" href="./index.html">Connect</button>
 		</div>
 	</body>
 </html>
