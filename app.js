@@ -46,7 +46,15 @@ var app = {
 
 // Minor change, to terminate lines with \r\n
 app.client.send = function(data) {
-	app.client.write(data + "\r\n");
+	try {
+		app.client.write(data + "\r\n");
+	}
+
+	catch(err) {
+		alert("No connection to the server.");
+		console.log(err);
+	}
+
 }
 
 // client.on('data', function(data) {
