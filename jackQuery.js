@@ -9,7 +9,15 @@ function Tag(x) {
 	this.set = function(c) { this.main.innerHTML = c; }
 	this.style = function(a, v) { this.main.style[a] = v; }
 	this.append = function(c) { this.main.innerHTML += c; }
-	this.value = function() { return this.main.value; }
+	this.value = function(v) {
+		if (v != undefined){
+			this.main.value = v;
+		}
+
+		else {
+			return this.main.value;
+		}
+	}
 	this.show = function(s) { this.main.style.display = "block"; }
 	this.hide = function(s) { this.main.style.display = "none"; }
 	this.listen = function(a, f) { this.main.addEventListener(a, f, false); }
