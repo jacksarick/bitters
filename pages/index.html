@@ -5,10 +5,11 @@
 		<title>New Server</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/modal.css">
+		<link rel="import" href="modal.html">
 
 		<script type="text/javascript">
 			var app = require('../js/app.js');
-			const $ = require("../js/jackQuery.js"); 
+			const $ = require("../js/jackQuery.js");
 		</script>
 	</head>
 	<body>
@@ -18,13 +19,14 @@
 				<input type="input" name="prompt" class="input-prompt">
 			</div>
 		</div>
+
 		<script type="text/javascript">
 			// Listen for data coming in
 			app.client.on('data', function(data) {
 				$("#content").append(data.toString().split("\n").join("<br>"));
 			});
 
-
+			// Add prompt
 			var prompt = $(".input-prompt");
 
 			// Listen for data going out
@@ -37,43 +39,11 @@
 			});
 		</script>
 
-
 		<!-- Modal for connecting to a new server -->
-		<div class="modal">
-			<div class="modal-content">
-				<h1>Connect to Server</h1>
-
-				<script>
-					// Function to trigger on submit
-					function submit() {
-						// Add data to app
-						app.userData('#main-form');
-
-						// Get data
-						const server = $("#server").value();
-						const port = $("#port").value();
-						
-						// Open connection
-						app.connect(server, port);
-						
-						// Set title
-						document.title = server;
-
-						// Peace out
-						$(".modal").hide();
-					}
-				</script>
-
-				<div id="main-form">
-					<label>Nickname: </label><input type="input" name="nickname" id="nickname" value="nickname"><br>
-					<label>Username: </label><input type="input" name="username" id="username" value="username"><br>
-					<label>Real name: </label><input type="input" name="realname" id="realname" value="realname"><br>
-					<br>
-					<label>Server: </label><input type="input" name="server" id="server" value="localhost"><br>
-					<label>Port: </label><input type="number" name="port" id="port" value="6667"><br>
-					<button onclick="submit();">Connect</button>
-				</div>
-			</div>
-		</div>
+		<script type="text/javascript">
+			// Open modal
+			var modal = document.querySelector('link[rel="import"]').import.querySelector('.modal');
+			document.body.appendChild(modal.cloneNode(true));
+		</script>
 	</body>
 </html>

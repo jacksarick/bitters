@@ -29,6 +29,12 @@ input:focus{
 	border: none;
 }
 
+input {
+	border: none;
+	outline: none;
+	padding: 0 .5em;
+}
+
 .prompt {
 	position: fixed;
 	bottom: 0;
@@ -40,9 +46,6 @@ input:focus{
 }
 
 .input-prompt{
-	padding: 0 .5em;
-	border: none;
-	outline: none;
 	font-size: 2em;
 	color: white;
 	height: 2em;
