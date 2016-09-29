@@ -15,11 +15,11 @@
 .modal-content {
 	/*position: fixed;*/
 	/*top: 10%;*/
-	background-color: #E95420;
+	background-color: #2D79A8;
 	margin: 5% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
-	width: 60%; /* Could be more or less, depending on screen size */
+	width: 60vw; /* Could be more or less, depending on screen size */
 }
 
 .close:hover,
@@ -32,6 +32,7 @@
 .submit:hover, .submit:focus {
 	cursor: pointer;
 }
+
 
 td {
 	text-align: right;
@@ -48,5 +49,9 @@ input {
 	background: #2D2D32;
 	font-size: 1.5em;
 	color: white;
+	width: 30vw;
+}
+
+input[type="button"] {
 	width: 100%;
 }

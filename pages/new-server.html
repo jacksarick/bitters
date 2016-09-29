@@ -2,42 +2,21 @@
 	<div class="modal-content">
 		<h1>Connect to Server</h1>
 
-		<script>
-			// Function to trigger on submit
-			function submit() {
-				// Add data to app
-				app.userData('#main-form');
-
-				// Get data
-				const server = $("#server").value();
-				const port = $("#port").value();
-				
-				// Open connection
-				app.connect(server, port);
-				
-				// Set title
-				document.title = server;
-
-				// Peace out
-				$(".modal").hide();
-			}
-		</script>
-
 		<div id="main-form">
 			<table>
 				<tr>
 					<td><label>Nickname:</label></td>
-					<td><input type="input" name="nickname" id="nickname" value="nickname"></td><br>
+					<td><input type="input" name="nickname" id="nickname" value="nickname"></td>
 				</tr>
 
 				<tr>
 					<td><label>Username:</label></td>
-					<td><input type="input" name="username" id="username" value="username"></td><br>
+					<td><input type="input" name="username" id="username" value="username"></td>
 				</tr>
 
 				<tr>
 					<td><label>Real name:</label></td>
-					<td><input type="input" name="realname" id="realname" value="realname"></td><br>
+					<td><input type="input" name="realname" id="realname" value="realname"></td>
 				</tr>
 
 				<tr>
@@ -54,4 +33,25 @@
 			</table>
 		</div>
 	</div>
+
+	<script>
+		// Function to trigger on submit
+		function submit() {
+			// Add data to app
+			app.userData('#main-form');
+
+			// Get data
+			const server = $("#server").value();
+			const port = $("#port").value();
+			
+			// Open connection
+			app.connect(server, port);
+			
+			// Set title
+			document.title = server;
+
+			// Peace out
+			$(".modal").hide();
+		}
+	</script>
 </div>
