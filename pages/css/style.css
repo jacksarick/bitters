@@ -42,13 +42,13 @@ input {
 	z-index: 1;
 	width: 100vw;
 	background: #1E1E23;
-	padding: 1em 3em;
+	padding: 0;
 }
 
 .input-prompt{
 	font-size: 2em;
 	color: white;
 	height: 2em;
-	width: calc(100vw - 3em);
+	width: 100vw;
 	background: #2D2D32;
 }

@@ -23,7 +23,7 @@ function Tag(x) {
 	}
 
 	this.value = function(v) {
-		if (v){
+		if (v != undefined){
 			this.main.value = v;
 		}
 
