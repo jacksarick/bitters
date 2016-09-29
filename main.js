@@ -40,15 +40,15 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', () => {
-	// Spawn a first window
-	createWindow()
+// app.on('ready', () => {
+// 	// Spawn a first window
+// 	createWindow()
 
-	// Register a 'CommandOrControl+N' shortcut listener.
-	globalShortcut.register('CommandOrControl+N', () => {
-		createWindow()
-	})
-})
+// 	// Register a 'CommandOrControl+N' shortcut listener.
+// 	electron.shortcut.register('CommandOrControl+N', () => {
+// 		createWindow()
+// 	})
+// })
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
