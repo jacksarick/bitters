@@ -1,6 +1,37 @@
 // Listen for data coming in
 app.client.on('data', function(data) {
-	$("#content").append(data.toString().split("\n").join("<br>"));
+	let lines = data.toString().split("\n");
+	let line;
+
+	for (line in lines){
+		console.log(lines[line]);
+		let input = lines[line].split(":");
+		
+		if (input.length == 0){
+			continue;
+		}
+
+		if (input[0] == ''){
+			input = input.slice(1);
+		}
+
+		console.log(input);
+
+		input = input.map(function(x) { return x.trim(); });
+
+		switch (input[0]){
+
+			case "":
+				app.client.send("PONG");
+				break;
+
+			default:
+				if (input[1]) {
+					$("#content").append(input[1].split("\n").join("<br>") + "<br>");
+				}
+				break;
+		}
+	}
 });
 
 // Add prompt
