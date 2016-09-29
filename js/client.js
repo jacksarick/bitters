@@ -15,8 +15,6 @@ prompt.listen("keyup", function(event) {
 	event.preventDefault();
 	const key = event.keyCode;
 	
-	console.log(key);
-	
 	switch(key) {
 		// Enter
 		case 13:
@@ -45,10 +43,11 @@ prompt.listen("keyup", function(event) {
 
 		// Down arrow
 		case 40:
-			console.log(line);
+			// If there are no more messages, clear
 			if (line == 0){
 				prompt.value("");
 			}
+
 			else{
 				// Decrement, if possible
 				line -= line > 0;
