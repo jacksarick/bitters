@@ -34,20 +34,24 @@ pre {
 	padding: 1em;
 }
 
-input:focus, input:hover{
-	border: none;
-	background: var(--dark-colour);
-}
 
 input {
-	border: none;
+	border: 1px solid var(--light-colour);
 	outline: none;
 	padding: .5em;
 	margin: 5px;
 }
 
+input:focus, input:hover{
+	border: 1px solid var(--dark-colour);
+}
+
 input[type="button"] {
-	width: 100%;
+	border: none;
+	transition: all .1s ease-in-out;
+	background: var(--light-colour);
+	cursor: pointer;
+	margin: 0;
 	box-shadow: 5px 10px 0px 0px var(--dark-colour);
 
 }
@@ -56,7 +60,12 @@ input[type="button"]:hover {
 	background: var(--light-colour);
 	transform: translate(2px, 5px);
 	box-shadow: 3px 5px 0px 0px var(--dark-colour);
-	width: 100%;
+}
+
+input[type="button"]:active {
+	background: var(--light-colour);
+	transform: translate(5px, 10px);
+	box-shadow: none;
 }
 
 .prompt {
@@ -64,26 +73,29 @@ input[type="button"]:hover {
 	bottom: 0;
 	left: 0;
 	z-index: 0;
-	width: 100vw;
-	padding: 0;
+	width: 100%;
+	padding: .5em;
+	background: var(--dark);
 }
 
 .input-prompt {
+	border: none;
 	box-shadow: none;
 	margin: 0;
 	font-size: 2em;
 	color: var(--light);
 	height: 2em;
-	width: 100vw;
+	width: 80%;
 	background: var(--dark);
 }
 
 .input-prompt:hover, .input-prompt:focus {
+	border: none;
 	background: var(--dark);
 }
 
 .content {
-	height: 100%;
+	/*height: 00%;*/
 	overflow-y: scroll;
 	line-height: 2;
 }
