@@ -3,38 +3,36 @@
 		<h1>Connect to Server</h1>
 
 		<div id="main-form">
-			<table>
-				<tr>
-					<td><label>Nickname:</label></td>
-					<td><input type="input" name="nickname" id="nickname" value="nickname"></td>
-				</tr>
+			
+			<div class="row">
+				<label class="column half">Nickname:</label>
+				<input class="column half" type="input" name="nickname" id="nickname" value="nickname">
+			</div>	
+		
+			<div class="row">
+				<label class="column half">Username:</label>
+				<input class="column half" type="input" name="username" id="username" value="username">
+			</div>
+		
+			<div class="row">
+				<label class="column half">Real name:</label>
+				<input class="column half" type="input" name="realname" id="realname" value="realname">
+			</div>
+		
+			<div class="row">
+				<label class="column half">Server:</label>
+				<input class="column half" type="input" name="server" id="server" value="localhost">
+			</div>
 
-				<tr>
-					<td><label>Username:</label></td>
-					<td><input type="input" name="username" id="username" value="username"></td>
-				</tr>
-
-				<tr>
-					<td><label>Real name:</label></td>
-					<td><input type="input" name="realname" id="realname" value="realname"></td>
-				</tr>
-
-				<tr class="buffer"><td></td></tr>
-
-				<tr>
-					<td><label>Server:</label></td>
-					<td><input type="input" name="server" id="server" value="localhost"></td>
-				</tr>
-
-				<tr>
-					<td><label>Port:</label></td>
-					<td><input type="number" name="port" id="port" value="6667"></td>
-				</tr>
-				
-				<tr class="buffer"><td></td></tr>
-
-				<tr><td colspan="2"><input class="submit" type="button" onclick="submit();" value="Connect"/></td></tr>
-			</table>
+		
+			<div class="row">
+				<label class="column half">Port:</label>
+				<input class="column half" type="number" name="port" id="port" value="6667">
+			</div>
+			
+			<div class="row">
+				<input class="column full submit" type="button" onclick="submit();" value="Connect"/>
+			</div>
 		</div>
 	</div>
 
