@@ -5,7 +5,10 @@
 		<title>New Server</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/modal.css">
+		<link rel="stylesheet" type="text/css" href="./css/pills.css">
 		<link rel="import" href="new-server.html">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<script type="text/javascript">
 			var app = require('../js/app.js');
@@ -15,8 +18,9 @@
 	<body>
 		<div id="main">
 			<div id="content" class="content"></div>
-			<div class="prompt">
-				<input type="input" name="prompt" class="input-prompt">
+			<div class="row prompt">
+				<input class="column three-fourths input-prompt" type="input" name="prompt">
+				<input id="send" class="column one-fourth" type="button" onclick="app.send();" value="Send"/>
 			</div>
 		</div>
 
