@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		hash = function(x){return x.charCodeAt(0).toString(16)[1]; };
+		hexx = function(d){ return "#" + d.split("").slice(0,3).map(hash).join("F") + "F"; }
+		s = function(t) { document.getElementById("div").style.background = hex(t) }
+	</script>
+	<div id="div" style="width:100vw; height: 100vh; background: #3F1F2F;"> This is a page I use to test the colour generation method</div>
+</body>
+</html>
