@@ -4,15 +4,15 @@
 	z-index: 2; /* Sit on top */
 	left: 0;
 	top: 0;
-	width: 100%; /* Full width */
+	width: 100vw; /* Full width */
 	height: 100vh; /* Full height */
+	background-color: var(--light);
 }
 
 /* Modal Content/Box */
 .modal-content {
 	background-color: var(--light);
 	margin: auto;
-	padding: 20px;
 	width: 60vw;
 }
 
@@ -26,11 +26,6 @@
 	text-decoration: none;
 	cursor: pointer;
 }
-
-.submit:hover, .submit:focus {
-	cursor: pointer;
-}
-
 
 td {
 	text-align: right;
@@ -46,7 +41,10 @@ input {
 	font-size: 1.5em;
 	color: var(--mid);
 	background: var(--light-colour);
-	width: 30vw;
+}
+
+.submit {
+	width: 100%;
 }
 
 .buffer{
