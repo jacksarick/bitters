@@ -1,5 +1,7 @@
 screen = {
-	put: function(data) {
+	put: function(name, data) {
+		var div = $("#content");
+
 		content = '<div class="row">'
 		content += '<div class="column one-fifth">'
 		content += 'names'
@@ -8,7 +10,12 @@ screen = {
 		content += data
 		content += '</div>'
 		content += '</div>'
-		$("#content").append(content);
+
+		div.append(content);
+		
+		// Scroll to bottom
+		div.$.scrollTop = div.$.scrollHeight;
+
 	}
 }
 

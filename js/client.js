@@ -29,7 +29,7 @@ app.client.on('data', function(data) {
 
 			default:
 				if (input[1]) {
-					screen.put(input[1].split("\n").join("<br>") + "<br>");
+					screen.put(input[0], input[1].split("\n").join("<br>") + "<br>");
 				}
 				break;
 		}
@@ -86,7 +86,7 @@ prompt.listen("keyup", function(event) {
 
 // Send function
 app.send = function() {
-	$("#send").click();
+	// $("#send").$.click();
 
 	// Collect input
 	const input = prompt.value();

@@ -1,35 +1,34 @@
 function Tag(x) {
 	if (x[0] == "#") {
-		this.main = document.getElementById(x.slice(1));
+		this.$ = document.getElementById(x.slice(1));
 	}
 	if (x[0] == ".") {
-		this.main = document.getElementsByClassName(x.slice(1))[0];
+		this.$ = document.getElementsByClassName(x.slice(1))[0];
 	}
 
-	this.style = function(a, v) { this.main.style[a] = v; }
-	this.append = function(c) { this.main.innerHTML += c; }
-	this.show = function(s) { this.main.style.display = "block"; }
-	this.hide = function(s) { this.main.style.display = "none"; }
-	this.listen = function(a, f) { this.main.addEventListener(a, f, false); }
-	this.click = function() { this.main.click(); }
+	this.style = function(a, v) { this.$.style[a] = v; }
+	this.append = function(c) { this.$.innerHTML += c; }
+	this.show = function(s) { this.$.style.display = "block"; }
+	this.hide = function(s) { this.$.style.display = "none"; }
+	this.listen = function(a, f) { this.$.addEventListener(a, f, false); }
 
 	this.html = function(v) {
 		if (v != undefined){
-			this.main.innerHTML = v;
+			this.$.innerHTML = v;
 		}
 
 		else {
-			return this.main.innerHTML;
+			return this.$.innerHTML;
 		}
 	}
 
 	this.value = function(v) {
 		if (v != undefined){
-			this.main.value = v;
+			this.$.value = v;
 		}
 
 		else {
-			return this.main.value;
+			return this.$.value;
 		}
 	}
 }

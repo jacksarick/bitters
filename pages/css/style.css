@@ -36,6 +36,7 @@ pre {
 
 
 input {
+	border-radius: 5px;
 	border: 1px solid var(--light-colour);
 	outline: none;
 	padding: .5em;
@@ -48,23 +49,24 @@ input:focus, input:hover{
 input[type="button"] {
 	border: none;
 	transition: all .1s ease-in-out;
+	/*transition: box-shadow .1s ease-in-out;*/
 	background: var(--light-colour);
 	cursor: pointer;
 	margin: 0;
-	box-shadow: 5px 10px 0px 0px var(--dark-colour);
+	box-shadow: 0px 10px 0px 0px var(--dark-colour);
 
 }
 
 input[type="button"]:hover {
 	background: var(--light-colour);
-	transform: translate(2px, 5px);
-	box-shadow: 3px 5px 0px 0px var(--dark-colour);
+	transform: translate(0, 5px);
+	box-shadow: 0px 5px 0px 0px var(--dark-colour);
 }
 
 input[type="button"]:active {
 	background: var(--light-colour);
-	transform: translate(5px, 10px);
-	box-shadow: none;
+	transform: translate(0, 10px);
+	box-shadow: 0px 0px 0px 0px var(--dark-colour);
 }
 
 .prompt {
@@ -93,8 +95,11 @@ input[type="button"]:active {
 	background: var(--dark);
 }
 
+
 .content {
-	/*height: 00%;*/
+	scroll-behavior: bottom;
+	height: calc(100vh - 5em);
 	overflow-y: scroll;
-	line-height: 2;
+	/*line-height: ;*/
+	/*margin-bottom: 5em;*/
 }

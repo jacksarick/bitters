@@ -36,11 +36,6 @@ var app = {
 			app.client.send('USER ' + app.user_data.username + ' 8 * ' + app.user_data.realname);
 			console.log('Connected');
 		});
-	},
-
-	parse: function(data) {
-		const base = data.split(":");
-		return [base[0].split(" "), base.slice(1).join(":")];
 	}
 };
 
@@ -56,10 +51,6 @@ app.client.send = function(data) {
 	}
 
 }
-
-// client.on('data', function(data) {
-// 	console.log('Received: ' + data);
-// });
 
 module.exports = app;
 
