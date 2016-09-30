@@ -39,7 +39,6 @@ input {
 	border: 1px solid var(--light-colour);
 	outline: none;
 	padding: .5em;
-	margin: 5px;
 }
 
 input:focus, input:hover{
