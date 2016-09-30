@@ -11,6 +11,7 @@ function Tag(x) {
 	this.show = function(s) { this.main.style.display = "block"; }
 	this.hide = function(s) { this.main.style.display = "none"; }
 	this.listen = function(a, f) { this.main.addEventListener(a, f, false); }
+	this.click = function() { this.main.click(); }
 
 	this.html = function(v) {
 		if (v != undefined){

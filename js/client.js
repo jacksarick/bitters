@@ -1,3 +1,5 @@
+screen = require("./screen.js")
+
 // Listen for data coming in
 app.client.on('data', function(data) {
 	let lines = data.toString().split("\n");
@@ -27,12 +29,14 @@ app.client.on('data', function(data) {
 
 			default:
 				if (input[1]) {
-					$("#content").append(input[1].split("\n").join("<br>") + "<br>");
+					screen.put(input[1].split("\n").join("<br>") + "<br>");
 				}
 				break;
 		}
 	}
 });
+
+
 
 // Add prompt
 var prompt = $(".input-prompt");
@@ -49,18 +53,7 @@ prompt.listen("keyup", function(event) {
 	switch(key) {
 		// Enter
 		case 13:
-			// Collect input
-			const input = prompt.value();
-
-			// Push to recent and reset counter
-			recent.unshift(input);
-			line = 0;
-
-			// Send it off
-			app.client.send(input);
-
-			// Clear prompt
-			prompt.value("");
+			app.send();
 			break;
 
 		// Up arrow
@@ -90,3 +83,21 @@ prompt.listen("keyup", function(event) {
 			break;
 	}
 });
+
+// Send function
+app.send = function() {
+	$("#send").click();
+
+	// Collect input
+	const input = prompt.value();
+
+	// Push to recent and reset counter
+	recent.unshift(input);
+	line = 0;
+
+	// Send it off
+	app.client.send(input);
+
+	// Clear prompt
+	prompt.value("");
+}
