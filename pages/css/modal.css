@@ -13,17 +13,15 @@
 
 /* Modal Content/Box */
 .modal-content {
-	/*position: fixed;*/
-	/*top: 10%;*/
-	background-color: #2D79A8;
-	margin: 5% auto; /* 15% from the top and centered */
+	background-color: var(--light);
+	margin: 5% auto;
 	padding: 20px;
 	width: 60vw;
 }
 
 .close:hover,
 .close:focus {
-	color: black;
+	/*color: black;*/
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -38,19 +36,18 @@ td {
 }
 
 label {
-	color: white;
 	font-size: 1.5em;
 	text-align: right;
 	padding-right: 1em;
 }
 
 input {
-	background: #2D2D32;
 	font-size: 1.5em;
-	color: white;
+	color: var(--mid);
+	background: var(--light-colour);
 	width: 30vw;
 }
 
-input[type="button"] {
-	width: 100%;
+.buffer{
+	height: 2em !important;
 }

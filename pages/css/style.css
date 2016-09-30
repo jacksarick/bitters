@@ -1,15 +1,24 @@
+:root {
+  --light: #FAFAFA;
+  --mid: #555;
+  --dark: #333;
+  --light-colour: #AADBE8;
+  --dark-colour: #86BCCA;
+}
+
 body {
 	max-width: 50em;
 	line-height: 1.5;
 	padding: 4em 1em;
-	color: #555;
+	color: var(--mid);
 	font-family: "Helvetica", "Arial", sans-serif;
 	margin: 0 5em;
 	padding-top: 1em;
+	background-color: var(--light);
 }
 
 h1, h2, strong {
-	color: #333;
+	color: var(--dark);
 }
 
 code, pre {
@@ -25,14 +34,29 @@ pre {
 	padding: 1em;
 }
 
-input:focus{
+input:focus, input:hover{
 	border: none;
+	background: var(--dark-colour);
 }
 
 input {
 	border: none;
 	outline: none;
 	padding: .5em;
+	margin: 5px;
+}
+
+input[type="button"] {
+	width: 100%;
+	box-shadow: 5px 10px 0px 0px var(--dark-colour);
+
+}
+
+input[type="button"]:hover {
+	background: var(--light-colour);
+	transform: translate(2px, 5px);
+	box-shadow: 3px 5px 0px 0px var(--dark-colour);
+	width: 100%;
 }
 
 .prompt {
@@ -41,19 +65,25 @@ input {
 	left: 0;
 	z-index: 0;
 	width: 100vw;
-	background: #1E1E23;
 	padding: 0;
 }
 
-.input-prompt{
+.input-prompt {
+	box-shadow: none;
+	margin: 0;
 	font-size: 2em;
-	color: white;
+	color: var(--light);
 	height: 2em;
 	width: 100vw;
-	background: #2D2D32;
+	background: var(--dark);
+}
+
+.input-prompt:hover, .input-prompt:focus {
+	background: var(--dark);
 }
 
 .content {
 	height: 100%;
 	overflow-y: scroll;
+	line-height: 2;
 }
