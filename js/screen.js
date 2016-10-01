@@ -2,9 +2,9 @@ screen = {
 	put: function(name, to, data) {
 		var div = $("#content");
 
-		content = '<div class="row">'
+		content = '<div class="row message">'
 		content += '<div class="column one-fifth">'
-		content += name + data
+		content += name + "<br>↳ " + to
 		content += '</div>'
 		content += '<div class="column four-fifths">'
 		content += data

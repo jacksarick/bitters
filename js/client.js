@@ -1,4 +1,4 @@
-screen = require("./screen.js")
+screen = require("./screen.js");
 
 // Listen for data coming in
 app.client.on('data', function(data) {
@@ -29,7 +29,11 @@ app.client.on('data', function(data) {
 
 			default:
 				if (input[1]) {
-					screen.put(input[0], input[1].split("\n").join("<br>") + "<br>");
+					sender = input[0].split(" ")
+
+					sender[0] = sender[0].split("!")[0]
+
+					screen.put(sender[0], sender[2], input[1].split("\n").join("<br>") + "<br>");
 				}
 				break;
 		}
