@@ -8,8 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="./css/pills.css">
 		<link rel="import" href="new-server.html">
 
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-
 		<script type="text/javascript">
 			var app = require('../js/app.js');
 			const $ = require('../js/jackQuery.js');
@@ -17,13 +15,15 @@
 	</head>
 	<body>
 		<div id="main">
-			<div class="wrapper">
-				<div id="content" class="content"></div>
+			<div class="wrapper row">
+				<div id="content" class="column whole content"></div>
 			</div>
 
-			<div class="row prompt">
-				<input class="column three-fourths input-prompt" type="input" name="prompt">
-				<input id="send" class="column one-fourth" type="button" onclick="app.send();" value="Send"/>
+			<div class="prompt-wrapper row">
+				<div class="column whole prompt row">
+					<input class="column three-fourths input-prompt" type="input" name="prompt">
+					<input id="send" class="column one-fourth" type="button" onclick="app.send();" value="Send"/>
+				</div>
 			</div>
 		</div>
 

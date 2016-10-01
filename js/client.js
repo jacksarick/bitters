@@ -23,7 +23,7 @@ app.client.on('data', function(data) {
 
 		switch (input[0]){
 
-			case "":
+			case "PING":
 				app.client.send("PONG");
 				break;
 
