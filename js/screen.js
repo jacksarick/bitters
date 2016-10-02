@@ -3,10 +3,10 @@ screen = {
 		var div = $("#content");
 
 		content = '<div class="row message">'
-		content += '<div class="column one-fifth">'
-		content += name + "<br>↳ " + to
+		content += '<div class="column one-fourth name">'
+		content += name + " → " + to
 		content += '</div>'
-		content += '<div class="column four-fifths">'
+		content += '<div class="column three-fourths">'
 		content += data
 		content += '</div>'
 		content += '</div>'
