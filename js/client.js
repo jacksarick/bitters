@@ -99,12 +99,17 @@ app.message = function() {
 
 	// If it's a command
 	if (input[0] == "/"){
+		// If it's the JOIN command, autoset the "to"
+		if (input.slice(1,5).toUpperCase() == "JOIN") {
+			app.to = input.split(" ")[1]
+		}
+
 		// Send it as is
 		app.client.send(input.slice(1));
 	}
 
 	// If it's a variable
-	if (input[0] == "=") {
+	else if (input[0] == "=") {
 		// TODO: actually implement this
 		// set it
 		app.to = input.slice(1);
@@ -119,8 +124,9 @@ app.message = function() {
 		}
 
 		// Otherwise warn the user
-		else
+		else {
 			screen.put("console", "error", "No reciever set");
+		}
 	}
 
 	// Clear prompt
