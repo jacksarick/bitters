@@ -17,8 +17,6 @@ app.client.on('data', function(data) {
 			input = input.slice(1);
 		}
 
-		console.log(input);
-
 		input = input.map(function(x) { return x.trim(); });
 
 		switch (input[0]){
@@ -57,7 +55,7 @@ prompt.listen("keyup", function(event) {
 	switch(key) {
 		// Enter
 		case 13:
-			app.send();
+			app.message();
 			break;
 
 		// Up arrow
@@ -88,8 +86,8 @@ prompt.listen("keyup", function(event) {
 	}
 });
 
-// Send function
-app.send = function() {
+// message function
+app.message = function() {
 	// $("#send").$.click();
 
 	// Collect input
@@ -99,8 +97,31 @@ app.send = function() {
 	recent.unshift(input);
 	line = 0;
 
-	// Send it off
-	app.client.send(input);
+	// If it's a command
+	if (input[0] == "/"){
+		// Send it as is
+		app.client.send(input.slice(1));
+	}
+
+	// If it's a variable
+	if (input[0] == "=") {
+		// TODO: actually implement this
+		// set it
+		app.to = input.slice(1);
+	}
+
+	// The default is to send to "to"
+	else {
+		// If it is set, send it
+		if (app.to){
+			app.client.send("PRIVMSG " + app.to + " :" + input);
+			screen.put(app.user_data.nickname, app.to, input);
+		}
+
+		// Otherwise warn the user
+		else
+			screen.put("console", "error", "No reciever set");
+	}
 
 	// Clear prompt
 	prompt.value("");
